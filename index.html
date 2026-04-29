@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cloud Notes (Local)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <h1>Cloud Notes</h1>
+        <div class="controls">
+          <input id="search" type="search" placeholder="Search notes..." aria-label="Search notes" />
+          <button id="newBtn" class="btn">+ New</button>
+        </div>
+      </header>
+
+      <div id="notesList" class="notes-list" role="list"></div>
+
+      <footer class="sidebar-footer">
+        <label class="switch">
+          <input id="darkToggle" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span class="theme-label">Dark</span>
+        <div class="small">Saved to localStorage (simulated cloud)</div>
+      </footer>
+    </aside>
+
+    <main class="editor">
+      <div class="editor-top">
+        <input id="noteTitle" class="title-input" placeholder="Title" maxlength="120" />
+        <div class="editor-actions">
+          <input id="fileInput" type="file" accept=".png,.jpg,.jpeg,.pdf,.txt,.text" style="display:none" />
+          <button id="attachBtn" class="btn" title="Attach file">Attach File</button>
+          <button id="saveBtn" class="btn" title="Save note">Save</button>
+          <button id="deleteBtn" class="btn danger" title="Delete note">Delete</button>
+          <span id="status" class="status">Idle</span>
+        </div>
+      </div>
+      <textarea id="noteContent" class="content-input" placeholder="Start writing..." spellcheck="true"></textarea>
+
+      <div id="attachmentsContainer" class="attachments-container" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
